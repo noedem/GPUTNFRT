@@ -1,0 +1,26 @@
+<h1> Actualizar los pesos de los indicadores </h1>
+
+<% padre = Issue.where(tracker_id: 9).last %>
+<% @issues = Issue.where(parent_id: padre.id) %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <% @issues.each do |iss| %>
+      <%= form_for(iss) do |f| %>
+        <%= f.label iss.subject %> - peso:
+        <%= f.text_field :valor_peso %> <br />
+        <%= f.submit "actualizar", class: "btn btn-primary" %> <br />
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<% total = 0 %>
+<% @issues.each do |iss| %>
+  <% total += iss.valor_peso %>
+<% end %>
+
+<% if total > 100 %>
+  <p> Error: los pesos de los indicadores deben sumar 100 </p>
+  <p> <%= total-100 %>% extra </p>
+<% end %>

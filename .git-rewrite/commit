@@ -1,0 +1,8 @@
+tree b4fc8295773fff6bde8aa060d2a8536b4cffc3e0
+parent ff65a5b22a5441476320a461c986a64b84ee025a
+author Jean-Philippe Lang <jp_lang@yahoo.fr> 1167653349 +0000
+committer Jean-Philippe Lang <jp_lang@yahoo.fr> 1167653349 +0000
+
+option to set maximum size of uploaded files
+
+git-svn-id: http://redmine.rubyforge.org/svn/trunk@131 e93f8b46-1217-0410-a6f0-8f06a7374b81
